@@ -5,6 +5,8 @@ class ImgGetter {
         image: AssetImage('graphics/home_page/Rayel-Garden.jpg'),
         height: 700,
       );
+
+  getBlueProfile() => const AssetImage('graphics/home_page/profile-blue.jpg');
   getSkillIcon(String location) => AssetImage(location);
 
   get diamondBackground =>

@@ -11,11 +11,6 @@ class SkillDescriptionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // if (skill == "") {
-    //   return const SizedBox(
-    //     height: 100,
-    //   );
-    // }
     return Center(
       child: ConstrainedBox(
         constraints: const BoxConstraints(

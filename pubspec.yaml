@@ -52,7 +52,7 @@ flutter:
     fonts:
     - asset: assets/fonts/Montserrat-Black.otf
       weight: 400
-    - asset: assets/fonts/Montserrat-BlackItalic.otf
+    - asset: assets/fonts/Montserrat-LightItalic.otf
       style: italic
       weight: 400
     - asset: assets/fonts/Montserrat-Bold.otf

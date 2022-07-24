@@ -10,22 +10,39 @@ class ShortDescriptionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 500,
+    return ConstrainedBox(
+      constraints: const BoxConstraints(
+        maxHeight: 250,
+        maxWidth: 1000,
+      ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             description.title,
-            style: getHeader1Style(description.textColor, true),
+            style:
+                getHeader1Style(description.textColor, description.hasShadow),
+            textAlign:
+                description.alignLeft ? TextAlign.left : TextAlign.center,
           ),
           const SizedBox(
-            height: 50,
+            height: 10,
+          ),
+          if (description.subtitle.isNotEmpty)
+            Text(
+              description.subtitle,
+              style: getSubtitleStyle(
+                  description.textColor, description.hasShadow),
+              textAlign:
+                  description.alignLeft ? TextAlign.left : TextAlign.center,
+            ),
+          const SizedBox(
+            height: 20,
           ),
           Text(
             description.body,
-            style: getBodyStyle(description.textColor, true),
-            textAlign: TextAlign.center,
+            style: getBodyStyle(description.textColor, description.hasShadow),
+            textAlign:
+                description.alignLeft ? TextAlign.left : TextAlign.center,
           ),
         ],
       ),

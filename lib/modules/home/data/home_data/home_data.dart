@@ -5,10 +5,39 @@ import 'package:online_portfolio/modules/home/data/models/skill_icon.dart';
 class HomeData {
   final ShortDescription _aboutMe = ShortDescription(
     textColor: Colors.white,
+    hasShadow: true,
     title: "Hello, I'm Carlos",
     body:
         "Computer Science student of the University of the Philippines, Los Baños. Mobile Developer with some experience in other fields such as ReactJS backend, MongoDB databases, and Python",
   );
+
+  final List<ShortDescription> workExp = [
+    ShortDescription(
+        title: "Sprout Solutions Phil., Inc.",
+        subtitle: "Intern",
+        body: "Software Development Intern")
+  ];
+
+  final List<ShortDescription> works = [
+    ShortDescription(
+        title: "KALATAS",
+        subtitle: "2022 - General Weighted Average Verifier for UPLB",
+        body:
+            "CMSC 128 group project wherein I am a Team Leader and a Programmer of the Database team.",
+        alignLeft: true),
+    ShortDescription(
+        title: "Periodic Visionary",
+        subtitle: "2021 - Science blog project",
+        body:
+            "SCI 10 Earth Science blog on the future of the elements of the periodic table web: https://periodicvisionary.wordpress.com/",
+        alignLeft: true),
+    ShortDescription(
+        title: "Deliverance",
+        subtitle: "2018 - Grade 11 video game project",
+        body:
+            "Turn-based console video game built in C# - Incorporates heavy use of ASCII graphics and sound",
+        alignLeft: true),
+  ];
 
   final List<SkillIcon> skills = [
     SkillIcon(

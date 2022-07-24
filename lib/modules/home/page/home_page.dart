@@ -59,14 +59,24 @@ class _HomePageState extends State<HomePage> {
               imageProvider: img.diamondBackground,
               child: BodyContainer(
                 width: 700,
-                child: Row(
+                child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Expanded(
-                      child: ShortDescriptionWidget(
-                        description: data.getAbout(),
-                      ),
+                    Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 5,
+                          ),
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: img.getBlueProfile(),
+                          )),
+                    ),
+                    ShortDescriptionWidget(
+                      description: data.getAbout(),
                     ),
                   ],
                 ),
@@ -115,6 +125,56 @@ class _HomePageState extends State<HomePage> {
                   SkillDescriptionWidget(
                     skill: skillName,
                   ),
+                ],
+              ),
+            ),
+            // Column(
+            //   mainAxisSize: MainAxisSize.min,
+            //   children: [
+            //     Text(
+            //       'Work Experience',
+            //       style: getTitleStyle(),
+            //     ),
+            //     ListView(
+            //       shrinkWrap: true,
+            //       children: data.workExp
+            //           .map((exp) => ShortDescriptionWidget(description: exp))
+            //           .toList(),
+            //     ),
+            //   ],
+            // ),
+            BodyContainer(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "Works",
+                          style: getTitleStyle(),
+                        ),
+                        const SizedBox(
+                          height: 150,
+                        ),
+                        GridView.count(
+                          shrinkWrap: true,
+                          crossAxisCount: 2,
+                          childAspectRatio: 3 / 2,
+                          children: data.works
+                              .map((work) =>
+                                  ShortDescriptionWidget(description: work))
+                              .toList(),
+                        )
+                      ],
+                    ),
+                  ),
+                  // Container(
+                  //   width: 5,
+                  //   height: 1000,
+                  //   margin: const EdgeInsets.symmetric(horizontal: 20),
+                  //   color: Colors.indigo,
+                  // ),
                 ],
               ),
             ),
