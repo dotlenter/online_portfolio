@@ -11,4 +11,5 @@ class ImgGetter {
 
   get diamondBackground =>
       const AssetImage('graphics/home_page/diamond_bg.jpg');
+  get comsciBackground => const AssetImage('graphics/home_page/comsci_bg.png');
 }

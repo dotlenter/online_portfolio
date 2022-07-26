@@ -9,21 +9,19 @@ class SkillIconWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FittedBox(
-      child: Column(
-        children: [
-          Image(
-            image: img.getSkillIcon(skill.iconLocation),
-            height: 50,
+    return Column(
+      children: [
+        Image(
+          image: img.getSkillIcon(skill.iconLocation),
+          height: 50,
+        ),
+        Text(
+          skill.name,
+          style: const TextStyle(
+            color: Colors.black,
           ),
-          Text(
-            skill.name,
-            style: const TextStyle(
-              color: Colors.black,
-            ),
-          )
-        ],
-      ),
+        )
+      ],
     );
   }
 }

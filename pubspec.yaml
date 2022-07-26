@@ -24,7 +24,7 @@ dependencies:
   dio:
   route_observer_mixin:
   intl:
-
+  expandable:
   
   cupertino_icons: ^1.0.2
 

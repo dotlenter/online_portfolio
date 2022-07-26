@@ -24,18 +24,24 @@ class HomeData {
         subtitle: "2022 - General Weighted Average Verifier for UPLB",
         body:
             "CMSC 128 group project wherein I am a Team Leader and a Programmer of the Database team.",
+        textColor: Colors.white,
+        hasShadow: true,
         alignLeft: true),
     ShortDescription(
         title: "Periodic Visionary",
         subtitle: "2021 - Science blog project",
         body:
             "SCI 10 Earth Science blog on the future of the elements of the periodic table web: https://periodicvisionary.wordpress.com/",
+        textColor: Colors.white,
+        hasShadow: true,
         alignLeft: true),
     ShortDescription(
         title: "Deliverance",
         subtitle: "2018 - Grade 11 video game project",
         body:
             "Turn-based console video game built in C# - Incorporates heavy use of ASCII graphics and sound",
+        textColor: Colors.white,
+        hasShadow: true,
         alignLeft: true),
   ];
 
@@ -70,12 +76,9 @@ class HomeData {
     ),
   ];
 
-  ImageIcon phone =
-      const ImageIcon(AssetImage("graphics/contact_icon/phone.png"));
-  ImageIcon mail =
-      const ImageIcon(AssetImage("graphics/contact_icon/mail.png"));
-  ImageIcon linkedin =
-      const ImageIcon(AssetImage("graphics/contact_icon/linkedin.png"));
+  AssetImage phone = const AssetImage("graphics/contact_icon/phone.png");
+  AssetImage mail = const AssetImage("graphics/contact_icon/mail.png");
+  AssetImage linkedin = const AssetImage("graphics/contact_icon/linkedin.png");
 
   final String _python =
       "I have experience with designing UI and Artificial Intelligence in Python.";
@@ -96,12 +99,12 @@ class HomeData {
 
   getSkillDir(String skill) {
     if (skill == "Python") return _python;
-    if (skill == "Javascript") return _python;
-    if (skill == "Flutter") return _python;
-    if (skill == "C") return _python;
-    if (skill == "C#") return _python;
-    if (skill == "MongoDB") return _python;
-    if (skill == "Github") return _python;
+    if (skill == "Javascript") return _javascript;
+    if (skill == "Flutter") return _flutter;
+    if (skill == "C") return _c;
+    if (skill == "C#") return _cSharp;
+    if (skill == "MongoDB") return _mongodb;
+    if (skill == "Github") return _github;
     return "No skill selected";
   }
 }
