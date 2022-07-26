@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:online_portfolio/modules/home/widget/special_containers/rounded_opacity_container.dart';
 
 import '../../../../../core/text_style/text_styles.dart';
 import '../../../../core/home_data/home_data.dart';
@@ -15,56 +16,57 @@ class SkillSection extends StatefulWidget {
 class _SkillSectionState extends State<SkillSection> {
   HomeData data = HomeData();
   String skillName = "";
-  String _description = "";
+  String _description = "Press a button to view my skills!";
 
   @override
   Widget build(BuildContext context) {
     return BodyContainer(
+      height: MediaQuery.of(context).size.height,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             "Skills",
-            style: getTitleStyle(),
+            style: getTitleStyle(Colors.white, true),
           ),
-          Text(
-            "Programming Languages and Markdown",
-            style: getHeader1Style(),
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          Center(
-            child: ListView(
-              shrinkWrap: true,
+          RoundedOpacityContainer(
+            color: Colors.black.withOpacity(0.8),
+            child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: data.skills
-                      .map(
-                        (skill) => ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              primary: Colors.white,
-                              shape: const CircleBorder(),
-                              padding: const EdgeInsets.all(30)),
-                          onPressed: () {
-                            print(skill.name);
-                            String skillText = data.getSkillDir(skill.name);
-                            print(skillText);
-                            setState(() {
-                              _description = skillText;
-                            });
-                          },
-                          child: SkillIconWidget(skill: skill),
-                        ),
-                      )
-                      .toList(),
+                Text(
+                  "Programming Languages and Markdown",
+                  style: getHeader1Style(Colors.white, true),
                 ),
+                ListView(
+                  shrinkWrap: true,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: data.skills
+                          .map(
+                            (skill) => ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  primary: Colors.white,
+                                  shape: const CircleBorder(),
+                                  padding: const EdgeInsets.all(20)),
+                              onPressed: () {
+                                String skillText = data.getSkillDir(skill.name);
+                                setState(() {
+                                  _description = skillText;
+                                });
+                              },
+                              child: SkillIconWidget(skill: skill),
+                            ),
+                          )
+                          .toList(),
+                    ),
+                  ],
+                ),
+                SkillDescription(),
               ],
             ),
           ),
-          SkillDescription(),
         ],
       ),
     );
@@ -74,23 +76,18 @@ class _SkillSectionState extends State<SkillSection> {
     return Center(
       child: ConstrainedBox(
         constraints: const BoxConstraints(
-          maxWidth: 1000,
+          maxWidth: 700,
           minWidth: 500,
         ),
-        child: Container(
-            alignment: Alignment.center,
-            padding: const EdgeInsets.all(50),
-            margin: const EdgeInsets.all(50),
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.indigo,
-                width: 2.0,
-              ),
-            ),
-            child: Text(
-              _description,
-              style: getBodyStyle(),
-            )),
+        child: RoundedOpacityContainer(
+          color: Colors.white,
+          child: Container(
+              alignment: Alignment.center,
+              child: Text(
+                _description,
+                style: getBodyStyle(),
+              )),
+        ),
       ),
     );
   }

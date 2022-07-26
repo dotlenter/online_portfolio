@@ -15,36 +15,39 @@ class ShortDescriptionWidget extends StatelessWidget {
         maxHeight: 250,
         maxWidth: 1000,
       ),
-      child: Column(
-        children: [
-          Text(
-            description.title,
-            style:
-                getHeader1Style(description.textColor, description.hasShadow),
-            textAlign:
-                description.alignLeft ? TextAlign.left : TextAlign.center,
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          if (description.subtitle.isNotEmpty)
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        child: Column(
+          children: [
             Text(
-              description.subtitle,
-              style: getSubtitleStyle(
-                  description.textColor, description.hasShadow),
+              description.title,
+              style:
+                  getHeader1Style(description.textColor, description.hasShadow),
               textAlign:
                   description.alignLeft ? TextAlign.left : TextAlign.center,
             ),
-          const SizedBox(
-            height: 20,
-          ),
-          Text(
-            description.body,
-            style: getBodyStyle(description.textColor, description.hasShadow),
-            textAlign:
-                description.alignLeft ? TextAlign.left : TextAlign.center,
-          ),
-        ],
+            const SizedBox(
+              height: 10,
+            ),
+            if (description.subtitle.isNotEmpty)
+              Text(
+                description.subtitle,
+                style: getSubtitleStyle(
+                    description.textColor, description.hasShadow),
+                textAlign:
+                    description.alignLeft ? TextAlign.left : TextAlign.center,
+              ),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(
+              description.body,
+              style: getBodyStyle(description.textColor, description.hasShadow),
+              textAlign:
+                  description.alignLeft ? TextAlign.left : TextAlign.center,
+            ),
+          ],
+        ),
       ),
     );
   }

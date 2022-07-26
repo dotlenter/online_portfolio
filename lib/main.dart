@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'home_page.dart';
+import 'modules/home/page/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,11 +17,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         fontFamily: 'Montserrat',
+        scrollbarTheme: ScrollbarThemeData(
+          thumbColor: MaterialStateProperty.all(
+            Colors.grey,
+          ),
+        ),
       ),
-      // theme: ThemeData(
-      //   primarySwatch: Colors.blue,
-      //   fontFamily: 'Montserrat',
-      // ),
       home: const HomePage(title: 'Flutter Demo Home Page'),
     );
   }

@@ -23,7 +23,7 @@ class HomeData {
         title: "KALATAS",
         subtitle: "2022 - General Weighted Average Verifier for UPLB",
         body:
-            "CMSC 128 group project wherein I am a Team Leader and a Programmer of the Database team.",
+            "CMSC 128 group project wherein I am a Team Leader and a Programmer of the Database team. I co-authored the database API that our backend team used.",
         textColor: Colors.white,
         hasShadow: true,
         alignLeft: true),
@@ -31,7 +31,7 @@ class HomeData {
         title: "Periodic Visionary",
         subtitle: "2021 - Science blog project",
         body:
-            "SCI 10 Earth Science blog on the future of the elements of the periodic table web: https://periodicvisionary.wordpress.com/",
+            "SCI 10 Earth Science blog on the future of the elements of the periodic table. It is, however, developed for free using only the UI of wordpress and not programmaticaly. web: https://periodicvisionary.wordpress.com/",
         textColor: Colors.white,
         hasShadow: true,
         alignLeft: true),
@@ -39,7 +39,7 @@ class HomeData {
         title: "Deliverance",
         subtitle: "2018 - Grade 11 video game project",
         body:
-            "Turn-based console video game built in C# - Incorporates heavy use of ASCII graphics and sound",
+            "My first project. A turn-based console video game built in C# that incorporates heavy use of ASCII graphics and sound. It is in the form of a single boss fight that takes inspiration from Undertale.",
         textColor: Colors.white,
         hasShadow: true,
         alignLeft: true),
