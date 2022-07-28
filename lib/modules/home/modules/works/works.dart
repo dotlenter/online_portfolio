@@ -34,9 +34,15 @@ class _WorksSectionState extends State<WorksSection> {
             child: GridView.count(
               shrinkWrap: true,
               crossAxisCount: 2,
-              childAspectRatio: 4 / 2,
+              childAspectRatio: 7 / 4,
               children: data.works
-                  .map((work) => ShortDescriptionWidget(description: work))
+                  .map(
+                    (work) => Center(
+                      child: ShortDescriptionWidget(
+                        description: work,
+                      ),
+                    ),
+                  )
                   .toList(),
             ),
           ),

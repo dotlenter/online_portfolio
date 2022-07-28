@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_portfolio/modules/home/modules/education/education.dart';
+import 'package:online_portfolio/modules/home/modules/trivia/trivia_section.dart';
 
 import '../../../core/text_style/text_styles.dart';
 import '../domain/image_getter.dart';
@@ -87,7 +88,15 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-        body: buildBody(),
+        body: Stack(
+          children: [
+            buildBody(),
+            const Align(
+              alignment: Alignment.bottomCenter,
+              child: TriviaSection(),
+            ),
+          ],
+        ),
       ),
     );
   }

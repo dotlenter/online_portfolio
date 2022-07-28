@@ -26,6 +26,7 @@ dependencies:
   intl:
   expandable:
   html:
+  carousel_slider:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:

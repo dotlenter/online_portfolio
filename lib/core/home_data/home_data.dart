@@ -8,17 +8,27 @@ class HomeData {
     hasShadow: true,
     title: "Hi, I'm Carlos",
     body:
-        "Computer Science student of the University of the Philippines, Los Baños. Mobile Developer with some experience in other fields such as ReactJS backend, MongoDB databases, and Python",
+        "Computer Science student of the University of the Philippines, Los Baños. Mobile Developer with some experience in other fields such as ReactJS backend, MongoDB databases, and Python. I also happen to be an artist, a nerd, and a gamer!",
   );
 
   final List<ShortDescription> workExp = [
     ShortDescription(
-        title: "Sprout Solutions Phil., Inc.",
-        subtitle: "Intern",
-        body: "Software Development Intern")
+      title: "Sprout Solutions Phil., Inc.",
+      subtitle: "Intern",
+      body: "Software Development Intern",
+    )
   ];
 
   final List<ShortDescription> works = [
+    ShortDescription(
+        title: "Summary of Schedule",
+        subtitle:
+            "2022: Sprout Solutions Phil., Inc. - A weekly schedule summary module",
+        body:
+            "An Innov Sprint project I made while I was doing internship in Sprout Solutions!",
+        textColor: Colors.white,
+        hasShadow: true,
+        alignLeft: true),
     ShortDescription(
         title: "KALATAS",
         subtitle: "2022 - General Weighted Average Verifier for UPLB",
@@ -43,6 +53,13 @@ class HomeData {
         textColor: Colors.white,
         hasShadow: true,
         alignLeft: true),
+  ];
+
+  final List<String> trivia = [
+    "I like writing stories and drawing them!",
+    "I once joined the Arnis club. On my first tournament, I blistered my hands! It was fun.",
+    "I play the violin and the piano, but I prefer the violin.",
+    "I like manga, anime, and web fiction!",
   ];
 
   final List<ShortDescription> education = [

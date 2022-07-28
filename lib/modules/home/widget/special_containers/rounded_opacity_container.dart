@@ -5,13 +5,15 @@ class RoundedOpacityContainer extends StatelessWidget {
   final Color? color;
   final Alignment? alignment;
   final double padding;
-  const RoundedOpacityContainer(
-      {Key? key,
-      required this.child,
-      this.color,
-      this.alignment,
-      this.padding = 30})
-      : super(key: key);
+  final double margin;
+  const RoundedOpacityContainer({
+    Key? key,
+    required this.child,
+    this.color,
+    this.alignment,
+    this.padding = 30,
+    this.margin = 30,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class RoundedOpacityContainer extends StatelessWidget {
         ),
         color: color,
       ),
-      margin: EdgeInsets.all(padding),
+      margin: EdgeInsets.all(margin),
       padding: EdgeInsets.all(padding),
       alignment: alignment,
       child: child,
