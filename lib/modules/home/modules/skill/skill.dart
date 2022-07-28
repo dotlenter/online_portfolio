@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:online_portfolio/modules/home/modules/skill/widget/skill_description_widget.dart';
 import 'package:online_portfolio/modules/home/widget/special_containers/rounded_opacity_container.dart';
 
 import '../../../../../core/text_style/text_styles.dart';
 import '../../../../core/home_data/home_data.dart';
 import '../../widget/special_containers/body_container.dart';
-import 'skill_icon_widget.dart';
+import 'widget/skill_icon_widget.dart';
 
 class SkillSection extends StatefulWidget {
   const SkillSection({Key? key}) : super(key: key);
@@ -63,31 +64,13 @@ class _SkillSectionState extends State<SkillSection> {
                     ),
                   ],
                 ),
-                SkillDescription(),
+                SkillDescriptionWidget(
+                  skillDescription: _description,
+                ),
               ],
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget SkillDescription() {
-    return Center(
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(
-          maxWidth: 700,
-          minWidth: 500,
-        ),
-        child: RoundedOpacityContainer(
-          color: Colors.white,
-          child: Container(
-              alignment: Alignment.center,
-              child: Text(
-                _description,
-                style: getBodyStyle(),
-              )),
-        ),
       ),
     );
   }

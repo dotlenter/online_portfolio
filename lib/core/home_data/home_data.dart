@@ -6,7 +6,7 @@ class HomeData {
   final ShortDescription _aboutMe = ShortDescription(
     textColor: Colors.white,
     hasShadow: true,
-    title: "Hello, I'm Carlos",
+    title: "Hi, I'm Carlos",
     body:
         "Computer Science student of the University of the Philippines, Los Baños. Mobile Developer with some experience in other fields such as ReactJS backend, MongoDB databases, and Python",
   );
@@ -43,6 +43,26 @@ class HomeData {
         textColor: Colors.white,
         hasShadow: true,
         alignLeft: true),
+  ];
+
+  final List<ShortDescription> education = [
+    ShortDescription(
+        title:
+            "3rd Year BS Computer Science - University of the Philippines, Los Baños.",
+        subtitle: "2019 (Ongoing)",
+        body: "Los Baños, Laguna."),
+    ShortDescription(
+        title: "Senior High - Ateneo de Manila Senior High School",
+        subtitle: "2017-2019",
+        body: "Quezon City, Metro Manila"),
+    ShortDescription(
+        title: "Junior High - Ateneo de Manila Junior High School",
+        subtitle: "2013-2017",
+        body: "Quezon City, Metro Manila"),
+    ShortDescription(
+        title: "Elementary - Claret School of Quezon City",
+        subtitle: "2008-2013",
+        body: "Quezon City, Metro Manila"),
   ];
 
   final List<SkillIcon> skills = [

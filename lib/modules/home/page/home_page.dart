@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:online_portfolio/core/text_style/text_styles.dart';
-import 'package:online_portfolio/modules/home/domain/image_getter.dart';
-import 'package:online_portfolio/modules/home/sections/contacts_section/contacts_section.dart';
+import 'package:online_portfolio/modules/home/modules/education/education.dart';
 
-import '../sections/intro_section/intro_section.dart';
-import '../sections/skill_section/skill_section.dart';
-import '../sections/works_section/works_section.dart';
+import '../../../core/text_style/text_styles.dart';
+import '../domain/image_getter.dart';
+import '../modules/contacts/contacts.dart';
+import '../modules/intro/intro.dart';
+import '../modules/skill/skill.dart';
+import '../modules/works/works.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -25,6 +26,7 @@ class _HomePageState extends State<HomePage> {
   final _home = GlobalKey();
   final _skills = GlobalKey();
   final _works = GlobalKey();
+  final _education = GlobalKey();
   final _contact = GlobalKey();
 
   _scrollListener() {
@@ -66,6 +68,7 @@ class _HomePageState extends State<HomePage> {
                   appbarButtons(_home, "Home"),
                   appbarButtons(_skills, "Skills"),
                   appbarButtons(_works, "Works"),
+                  appbarButtons(_education, "Education"),
                   appbarButtons(_contact, "Contact Me"),
                 ],
               )
@@ -79,6 +82,7 @@ class _HomePageState extends State<HomePage> {
                     appbarButtons(_home, "Home"),
                     appbarButtons(_skills, "Skills"),
                     appbarButtons(_works, "Works"),
+                    appbarButtons(_education, "Education"),
                     appbarButtons(_contact, "Contact Me"),
                   ],
                 ),
@@ -88,21 +92,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // buildBody() => Scrollbar(
-  //       thickness: 20,
-  //       controller: _pageController,
-  //       isAlwaysShown: true,
-  //       child: PageView(
-  //         controller: _pageController,
-  //         scrollDirection: Axis.vertical,
-  //         children: [
-  //           const IntroSection(),
-  //           const SkillSection(),
-  //           const WorksSection(),
-  //           ContactsSection(),
-  //         ],
-  //       ),
-  //     );
   buildBody() => Scrollbar(
         controller: _scrollController,
         thickness: 20,
@@ -120,6 +109,9 @@ class _HomePageState extends State<HomePage> {
               WorksSection(
                 key: _works,
               ),
+              EducationSection(
+                key: _education,
+              ),
               ContactsSection(
                 key: _contact,
               ),
@@ -131,7 +123,7 @@ class _HomePageState extends State<HomePage> {
   Widget appbarButtons(GlobalKey key, String text) => TextButton(
         onPressed: () => _scrollController.position.ensureVisible(
           key.currentContext?.findRenderObject() as RenderBox,
-          duration: const Duration(seconds: 1),
+          duration: const Duration(milliseconds: 500),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),

@@ -4,8 +4,13 @@ class RoundedOpacityContainer extends StatelessWidget {
   final Widget child;
   final Color? color;
   final Alignment? alignment;
+  final double padding;
   const RoundedOpacityContainer(
-      {Key? key, required this.child, this.color, this.alignment})
+      {Key? key,
+      required this.child,
+      this.color,
+      this.alignment,
+      this.padding = 30})
       : super(key: key);
 
   @override
@@ -17,8 +22,8 @@ class RoundedOpacityContainer extends StatelessWidget {
         ),
         color: color,
       ),
-      margin: const EdgeInsets.all(30),
-      padding: const EdgeInsets.all(30),
+      margin: EdgeInsets.all(padding),
+      padding: EdgeInsets.all(padding),
       alignment: alignment,
       child: child,
     );

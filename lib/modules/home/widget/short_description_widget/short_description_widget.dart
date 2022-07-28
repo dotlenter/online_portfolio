@@ -26,6 +26,10 @@ class ShortDescriptionWidget extends StatelessWidget {
               textAlign:
                   description.alignLeft ? TextAlign.left : TextAlign.center,
             ),
+            Divider(
+              color: description.textColor,
+              thickness: 2,
+            ),
             const SizedBox(
               height: 10,
             ),
