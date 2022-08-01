@@ -122,7 +122,7 @@ class HomeData {
   final String _javascript =
       "I have experience in creating React JS backends and connecting them to HTML/CSS frontends.";
   final String _flutter =
-      "I have experience with designing UI and Artificial Intelligence in Python.";
+      "I have experience with designing UI and frontend functionalities in Flutter.";
   final String _c =
       "I have experience in working with data structures and threads in C.";
   final String _cSharp =

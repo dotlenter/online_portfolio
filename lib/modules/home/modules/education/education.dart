@@ -27,14 +27,19 @@ class _EducationSectionState extends State<EducationSection> {
               "Education",
               style: getTitleStyle(Colors.white, true),
             ),
-            Row(
-              children: data.education
-                  .map(
-                    (item) => Expanded(
-                      child: EducationWidget(item: item),
-                    ),
-                  )
-                  .toList(),
+            Container(
+              margin: const EdgeInsets.only(
+                top: 50,
+              ),
+              child: Row(
+                children: data.education
+                    .map(
+                      (item) => Expanded(
+                        child: EducationWidget(item: item),
+                      ),
+                    )
+                    .toList(),
+              ),
             ),
           ],
         ),
