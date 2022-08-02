@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:online_portfolio/modules/home/modules/education/education.dart';
 import 'package:online_portfolio/modules/home/modules/trivia/trivia_section.dart';
+import 'package:online_portfolio/modules/home/widget/app_bar_switcher_widget/app_bar_switcher_widget.dart';
 
-import '../../../core/text_style/text_styles.dart';
 import '../domain/image_getter.dart';
 import '../modules/contacts/contacts.dart';
 import '../modules/intro/intro.dart';
@@ -29,6 +29,8 @@ class _HomePageState extends State<HomePage> {
   final _works = GlobalKey();
   final _education = GlobalKey();
   final _contact = GlobalKey();
+  final _appBarAKey = UniqueKey();
+  final _appBarBKey = UniqueKey();
 
   _scrollListener() {
     setState(() {
@@ -54,40 +56,7 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         extendBodyBehindAppBar: true,
         backgroundColor: Colors.transparent,
-        appBar: _scrollPosition <= 500
-            ? AppBar(
-                title: Text(
-                  "CARLOS RAYEL",
-                  style: getTitleStyle(
-                    Colors.white,
-                    true,
-                  ),
-                ),
-                backgroundColor: Colors.transparent,
-                elevation: 0.0,
-                actions: [
-                  appbarButtons(_home, "Home"),
-                  appbarButtons(_skills, "Skills"),
-                  appbarButtons(_works, "Works"),
-                  appbarButtons(_education, "Education"),
-                  appbarButtons(_contact, "Contact Me"),
-                ],
-              )
-            : AppBar(
-                centerTitle: true,
-                backgroundColor: Colors.black.withOpacity(0.8),
-                elevation: 0.0,
-                title: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    appbarButtons(_home, "Home"),
-                    appbarButtons(_skills, "Skills"),
-                    appbarButtons(_works, "Works"),
-                    appbarButtons(_education, "Education"),
-                    appbarButtons(_contact, "Contact Me"),
-                  ],
-                ),
-              ),
+        appBar: AppBarSwitcher(50),
         body: Stack(
           children: [
             buildBody(),
@@ -129,17 +98,23 @@ class _HomePageState extends State<HomePage> {
         ),
       );
 
-  Widget appbarButtons(GlobalKey key, String text) => TextButton(
-        onPressed: () => _scrollController.position.ensureVisible(
-          key.currentContext?.findRenderObject() as RenderBox,
-          duration: const Duration(milliseconds: 500),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Text(
-            text,
-            style: getBodyStyle(Colors.white, true),
-          ),
-        ),
-      );
+  PreferredSize AppBarSwitcher(double height) {
+    return PreferredSize(
+      preferredSize: Size(
+        height,
+        height,
+      ),
+      child: AppBarSwitcherWidget(
+        scrollPosition: _scrollPosition,
+        home: _home,
+        skills: _skills,
+        works: _works,
+        education: _education,
+        contact: _contact,
+        appBarAKey: _appBarAKey,
+        appBarBKey: _appBarBKey,
+        scrollController: _scrollController,
+      ),
+    );
+  }
 }

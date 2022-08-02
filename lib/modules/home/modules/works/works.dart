@@ -34,20 +34,6 @@ class _WorksSectionState extends State<WorksSection> {
           ),
           RoundedOpacityContainer(
             color: Colors.black.withOpacity(0.8),
-            // child: GridView.count(
-            //   shrinkWrap: true,
-            //   crossAxisCount: 2,
-            //   childAspectRatio: 7 / 4,
-            //   children: data.works
-            //       .map(
-            //         (work) => Center(
-            //           child: ShortDescriptionWidget(
-            //             description: work,
-            //           ),
-            //         ),
-            //       )
-            //       .toList(),
-            // ),
             child: Stack(
               children: [
                 Padding(
