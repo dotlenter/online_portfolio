@@ -6,7 +6,7 @@ import '../../../../core/home_data/home_data.dart';
 import '../../../../core/text_style/text_styles.dart';
 import 'widget/email_text_field_widget.dart';
 
-class ContactsSection extends StatelessWidget {
+class ContactsSection extends StatelessWidget { // <-- Should be the same with filename
   ContactsSection({Key? key}) : super(key: key);
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _name = TextEditingController();
@@ -64,7 +64,7 @@ class ContactsSection extends StatelessWidget {
     );
   }
 
-  Widget IconTextPair(AssetImage image, String text, [String link = ""]) =>
+  Widget IconTextPair(AssetImage image, String text, [String link = ""]) => // <-- Make this private and fix method name
       Padding(
         padding: const EdgeInsets.all(10),
         child: Row(
