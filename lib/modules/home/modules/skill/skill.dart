@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:online_portfolio/modules/home/modules/skill/widget/skill_description_widget.dart';
-import 'package:online_portfolio/modules/home/widget/special_containers/rounded_opacity_container.dart';
+import 'package:online_portfolio/modules/home/widget/special_containers/rounded_opacity_container.dart'; // <-- Fix imports
 
 import '../../../../../core/text_style/text_styles.dart';
 import '../../../../core/home_data/home_data.dart';
@@ -46,12 +46,12 @@ class _SkillSectionState extends State<SkillSection> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: data.skills
                           .map(
-                            (skill) => ElevatedButton(
+                            (skill) => ElevatedButton( // <-- Make a method variable for this.
                               style: ElevatedButton.styleFrom(
                                   primary: Colors.white,
                                   shape: const CircleBorder(),
                                   padding: const EdgeInsets.all(20)),
-                              onPressed: () {
+                              onPressed: () { // <-- Make a private method for this.
                                 String skillText = data.getSkillDir(skill.name);
                                 setState(() {
                                   _description = skillText;
