@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:online_portfolio/core/home_data/home_data.dart';
 import 'package:online_portfolio/core/text_style/text_styles.dart';
 import 'package:online_portfolio/modules/home/modules/education/widget/education_widget.dart';
-import 'package:online_portfolio/modules/home/widget/special_containers/body_container.dart';
+import 'package:online_portfolio/modules/home/widget/special_containers/body_container.dart'; // <-- Fix imports
 
 class EducationSection extends StatefulWidget {
   const EducationSection({Key? key}) : super(key: key);
@@ -36,7 +36,7 @@ class _EducationSectionState extends State<EducationSection> {
                     .map(
                       (item) => Expanded(
                         child: EducationWidget(item: item),
-                      ),
+                      ), // <-- Make a variable for this.
                     )
                     .toList(),
               ),
