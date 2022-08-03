@@ -32,11 +32,14 @@ class AppBarSwitcherWidget extends StatelessWidget {
       duration: const Duration(
         milliseconds: 250,
       ),
-      child: scrollPosition <= 500 ? appBarA : appBarB,
+      child: scrollPosition <= 500 ? _buildDefaultAppBar : _buildScrollingAppBar, // <-- Make this a variable
     );
   }
 
-  get appBarA => AppBar(
+  Widget _buildDefaultAppBar
+  Widget _buildScrollingAppBar
+
+  get appBarA => AppBar( // <-- Refactor and make this a method, follow naming conventions
         key: appBarAKey,
         title: Text(
           "CARLOS RAYEL",
@@ -72,8 +75,8 @@ class AppBarSwitcherWidget extends StatelessWidget {
         ),
       );
 
-  Widget appbarButtons(GlobalKey key, String text) => TextButton(
-        onPressed: () => scrollController.position.ensureVisible(
+  Widget appbarButtons(GlobalKey key, String text) => TextButton( // <-- Create a new widget for this
+        onPressed: () => scrollController.position.ensureVisible( // <-- Make a private method for this
           key.currentContext?.findRenderObject() as RenderBox,
           duration: const Duration(milliseconds: 500),
         ),
