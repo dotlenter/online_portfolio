@@ -5,7 +5,7 @@ import '../../data/models/short_description.dart';
 
 class ShortDescriptionWidget extends StatelessWidget {
   final ShortDescription description;
-  const ShortDescriptionWidget({Key? key, required this.description})
+  const ShortDescriptionWidget({Key? key, required this.description}) // <-- Add comma
       : super(key: key);
 
   @override
@@ -13,7 +13,7 @@ class ShortDescriptionWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.center, <-- remove comment
         children: [
           Text(
             description.title,
@@ -29,7 +29,7 @@ class ShortDescriptionWidget extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          if (description.subtitle.isNotEmpty)
+          if (description.subtitle.isNotEmpty) // <-- Make a build method for this
             Text(
               description.subtitle,
               style: getSubtitleStyle(
