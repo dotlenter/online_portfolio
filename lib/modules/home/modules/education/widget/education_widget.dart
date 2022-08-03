@@ -21,7 +21,7 @@ class EducationWidget extends StatelessWidget {
       margin: 10,
       color: Colors.white.withOpacity(0.9),
       child: Container(
-        height: (MediaQuery.of(context).size.height / 2),
+        height: (MediaQuery.of(context).size.height / 2), // <-- Make a variable for this
         padding: const EdgeInsets.symmetric(
           vertical: 50,
         ),
