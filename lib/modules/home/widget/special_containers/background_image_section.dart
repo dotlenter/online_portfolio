@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Observe naming convention file name == class name
 class BackgroundImageSectionWidget extends StatelessWidget {
   final Widget child;
   final AssetImage imageProvider;
