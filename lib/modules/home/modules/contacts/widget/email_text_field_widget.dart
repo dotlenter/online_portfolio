@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:online_portfolio/modules/home/data/models/email_model.dart';
+import 'package:online_portfolio/modules/home/data/models/email_model.dart'; // <-- Fix imports
 
 import '../../../../../core/text_style/text_styles.dart';
 
@@ -85,7 +85,7 @@ class EmailTextField extends StatelessWidget {
     );
   }
 
-  Container whiteTextField(TextEditingController controller, String hintText,
+  Container whiteTextField(TextEditingController controller, String hintText, // <-- Make this method private
           [int? lines]) =>
       Container(
         padding: const EdgeInsets.symmetric(
