@@ -10,7 +10,7 @@ class BodyContainer extends StatelessWidget {
       required this.child,
       this.backgroundColor,
       this.width = 1200,
-      this.height = 200})
+      this.height = 200}) // <-- Add comma in the end of parameter
       : super(key: key);
 
   @override
