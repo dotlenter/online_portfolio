@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:online_portfolio/modules/home/domain/image_getter.dart';
+import 'package:online_portfolio/modules/home/domain/image_getter.dart'; // <-- Fix import
 
 import '../../../../core/home_data/home_data.dart';
 import '../../widget/short_description_widget/short_description_widget.dart';
