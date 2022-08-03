@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_portfolio/modules/home/modules/education/education.dart';
 import 'package:online_portfolio/modules/home/modules/trivia/trivia_section.dart';
-import 'package:online_portfolio/modules/home/widget/app_bar_switcher_widget/app_bar_switcher_widget.dart';
+import 'package:online_portfolio/modules/home/widget/app_bar_switcher_widget/app_bar_switcher_widget.dart'; // <-- Fix imports
 
 import '../domain/image_getter.dart';
 import '../modules/contacts/contacts.dart';
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    _scrollController.addListener(_scrollListener);
+    _scrollController.addListener(_scrollListener); // <-- Dispose controller
     super.initState();
   }
 
@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  buildBody() => Scrollbar(
+  buildBody() => Scrollbar( // <-- Make this private
         controller: _scrollController,
         thickness: 20,
         isAlwaysShown: true,
@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
         ),
       );
 
-  PreferredSize AppBarSwitcher(double height) {
+  PreferredSize AppBarSwitcher(double height) { // <-- Move 'PreferredSize' To AppBarSwitcher or Follow naming convention and make it private
     return PreferredSize(
       preferredSize: Size(
         height,
